@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flow</title>
+    <link rel = "icon" href = "img/flowLogo.png" type = "image/x-icon">
+    <meta charset="UTF+8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/toggle.css">
+    <link rel="stylesheet" href="css/instruction.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="loading.css">
+
+    <script src="loading.js" defer></script>
+    <script src="js/rightclick.js" defer></script>
+    <script src="js/instruction.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+   <div id="loading-screen">
+        <img src="img/loading.gif" alt="Loading">
+      </div> 
+      <div class="loading-screen2" id="loading-screen2">
+        <img class="loading-gif2" src="img/signout.gif"  alt="Loading">
+      </div> 
+    <div class="headerContainer">
+        <div class="titleAndDarkMode">
+            <h2 class="title">flow</h2>
+            <div class="container">
+                <input type="checkbox" id="toggle">
+            </div>
+        </div>
+        <div class="welcome">
+            <label class="textLine">Welcome to flow,</label><br>
+            <label id="user"></label>
+        </div>
+        <div class="buttonGroup">
+            <button class="buttonHeader" id="howToUse" onclick="instructionOpen()"> How to Use? </button>
+            <!--instruction html to guys-->
+            <div class="instructionOverlay">
+                <div class="instructionBlocker" onclick="instructionClose()"></div>
+                <div class="instructionPopup">
+                    <div class="instructionTitle">Instructions</div>
+                    <div class="close" id="close" onclick="instructionClose()"></div>
+                    <table class="image-table">
+                        <td>
+                            <div class="image-wrapper">
+                                <img src="img/instruction1static.png" class="instructionStatic">
+                                <img src="img/instruction1.gif" id="gifBorder" class="active">
+                                <div class="image-text">1. Adding todo notes</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="image-wrapper">
+                                <img src="img/instruction2static.png" alt="Writing your task" class="instructionStatic">
+                                <img src="img/instruction2.gif" class="active" id="gifBorder">
+                                <div class="image-text">2. Writing your task</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="image-wrapper">
+                                <img src="img/instruction3static.png" alt="Changing the status of tasks"
+                                    class="instructionStatic">
+                                <img src="img/instruction3.gif" class="active" id="gifBorder">
+                                <div class="image-text">3. Using right click function</div>
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="image-wrapper">
+                                    <img src="img/instruction4static.png" alt="Arranging order of tasks"
+                                        class="instructionStatic">
+                                    <img src="img/instruction4.gif" class="active" id="gifBorder">
+                                    <div class="image-text">4. Selecting multiple notes</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="image-wrapper">
+                                    <img src="img/instruction5static.png" alt="Using font style and delete"
+                                        class="instructionStatic">
+                                    <img src="img/instruction5.gif" class="active" id="gifBorder">
+                                    <div class="image-text">5. Changing note order and status </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="image-wrapper">
+                                    <img src="img/instruction6static.png" alt="Using the day and night mode"
+                                        class="instructionStatic">
+                                    <img src="img/instruction6.gif" class="active" id="gifBorder">
+                                    <div class="image-text">6. Using Day and Night mode</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <button class="buttonHeader" id="signOut" onclick="signOut()"> Sign Out </button>
+        </div>
+        <div id="backDrop"></div>
+    </div>
+    <div id="kanbanBoard">
+        <div id="todo" class="kanbanGroup">
+            <button class="addButton" type="button">+ Add a Todo</button>
+            <div class="todoScroll" id="todoGroup">
+
+            </div>
+        </div>
+
+        <div id="ongoing" class="kanbanGroup">
+            <label class="groupHeader" id="onGoingHeader">On Going</label>
+            <div class="todoScroll">
+                <!--notes html-->
+
+
+            </div>
+        </div>
+
+
+        <div id="done" class="kanbanGroup">
+            <label class="groupHeader" id="doneHeader">Done</label>
+            <div class="todoScroll">
+                <!--notes html-->
+
+            </div>
+        </div>
+
+        <!--Right Click Context Menu-->
+        <div class="custom-context-menu">
+            <ul id="menu" class="menu">
+                <li class="bold">
+                    <a href="#" class="uil-bold" id="bold" draggable="false">Bold</a>
+                </li>
+                <li class="italic">
+                    <a href="#" class="uil uil-italic" id="ital" draggable="false">Italic</a>
+                </li>
+                <li class="italic">
+                    <a href="#" class="uil uil-pen" id="highlight" draggable="false">Highlight</a>
+                </li>
+                <li class="delete">
+                    <a href="#" id="del" class="uil-trash-alt" draggable="false">Delete</a>
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+            //get username stored in sessionStorage to display on header
+            var username = sessionStorage.getItem("username");
+            document.getElementById('user').innerText = username;
+
+            document.getElementById("toggle").addEventListener("click", function () {
+                document.getElementsByTagName('body')[0].classList.toggle("dark-theme");
+                document.querySelector(".headerContainer").classList.toggle("dark-theme2");
+                ocument.querySelector(".instructionOverlay").classList.toggle("nightMODE1");
+
+                // document.querySelector(".title").classList.toggle("dark-theme7");
+            });
+        </script>
+        <script src="js/toggle.js" defer></script>
+    </div>
+</body>
+
+</html>

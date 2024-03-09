@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;600;800&display=swap');
+
+#close {
+    overflow: hidden;
+    margin-right: 3px;
+    position: absolute;
+    right: 0;
+    /* Add right: 0 to position it on the right side */
+    top: 0;
+    /* Add top: 0 to position it at the top */
+    border: none;
+    padding: 0;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: transparent;
+    color: #232323;
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+    margin-right: 35px;
+    margin-top: 30px;
+
+    &:focus {
+        outline: solid 0 transparent;
+        box-shadow: 0 0 0 2px #969696;
+    }
+
+    &:hover {
+        color: #787777;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 15%;
+        left: calc(50% - .0625em);
+        width: .125em;
+        height: 70%;
+        border-radius: .125em;
+        transform: rotate(45deg);
+        background: currentcolor;
+        content: '';
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+#close.nightMODE5 {
+    overflow: hidden;
+    margin-right: 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    padding: 0;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: transparent;
+    color: #f2f2f2;
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+    margin-right: 35px;
+    margin-top: 30px;
+
+    &:focus {
+        outline: solid 0 transparent;
+        box-shadow: 0 0 0 2px #969696;
+    }
+
+    &:hover {
+
+        color: #8f8f8f;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 15%;
+        left: calc(50% - .0625em);
+        width: .125em;
+        height: 70%;
+        border-radius: .125em;
+        transform: rotate(45deg);
+        background: currentcolor;
+        content: '';
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+#gifBorder {
+    border: solid 3px #c3c3c3;
+}
+
+.image-table {
+    width: 100%;
+    height: 85%;
+    border: hidden;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 60px;
+    margin-right: 20px;
+}
+
+.image-table td {
+    text-align: center;
+    column-span: 2;
+    width: 100%;
+    padding: 30px 20px 0px;
+
+}
+
+.image-text {
+    font-family: 'Raleway';
+    font-weight: 600;
+    line-height: 2.5;
+}
+
+.image-text.nightMODE3 {
+    font-family: 'Raleway';
+    font-weight: 600;
+    line-height: 2.5;
+    color: #f2f2f2;
+}
+
+.image-wrapper {
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+img {
+    border-radius: 10px;
+    border: solid 1px #d4d4d4;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.instructionBlocker {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.instructionBlocker.nightMODE0 {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+.instructionOverlay {
+    display: none;
+}
+
+.instructionOverlay.open {
+    display: block;
+}
+
+.instructionOverlay .instructionPopup {
+    position: fixed;
+    aspect-ratio: 16/9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.378);
+    border-radius: 15px;
+    padding: 30px;
+    overflow: auto;
+    color: #232323;
+    overflow: hidden;
+    z-index: 2;
+    background-image: url("../img/Instruct_day.png");
+    background-size: cover;
+}
+
+.instructionOverlay .instructionPopup.nightMODE1 {
+    position: fixed;
+    aspect-ratio: 16/9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: #232323;
+    box-shadow: 3px 3px 10px rgba(146, 146, 146, 0.378);
+    border-radius: 15px;
+    padding: 30px;
+    overflow: auto;
+    overflow: hidden;
+    z-index: 2;
+    background-image: url("../img/Instruct_night.png");
+    background-size: cover;
+}
+
+.instructionStatic {
+    position: absolute;
+    width: 26.75%;
+    border: solid 3px #c3c3c3;
+}
+
+.instructionStatic:hover {
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.instructionTitle {
+    height: 30px;
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 30px;
+    margin-left: 35px;
+    margin-top: 10px;
+    float: left;
+}
+
+.instructionTitle.nightMODE2 {
+    color: #f2f2f2;
+}

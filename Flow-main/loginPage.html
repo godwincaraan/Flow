@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/loginPage.css">
+
+    <title>Flow</title>
+    <link rel = "icon" href = "img/flowLogo.png" type = "image/x-icon">
+</head>
+<body>
+  <div class = "top">
+<label><p class = "title"><br>flow</p></label>
+</div>
+<br>
+<div class="twoside">
+    <div class="left">
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Sign-up</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required />
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <button type="button" value= "Sign-up">Sign-up</button>
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Log-in</header>
+        <form action="#">
+          <form>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="button" id="loginBtn" onclick="login()">Log-in</button>
+        </form>
+      </div>
+   
+    </div>          
+    <div class="right">
+        <div class="rightTop">
+            <br>
+            <h1>Be Organized Now.</h1>
+            <p>Introducing 'Flow,' the ultimate app that revolutionizes student <br>organization and boosts academic success!</p>
+
+        </div>
+        <div class="rightDown">
+         
+            <img src="img/picLogin2.png" class = "image1">
+        </div>
+      
+ 
+    </div>
+</div>
+<script src="js/loginPage.js"></script>
+<script>
+  // for animation in login form
+  const wrapper = document.querySelector(".wrapper"),
+    signupHeader = document.querySelector(".signup header"),
+    loginHeader = document.querySelector(".login header");
+
+  loginHeader.addEventListener("click", () => {
+    wrapper.classList.add("active");
+  });
+  signupHeader.addEventListener("click", () => {
+    wrapper.classList.remove("active");
+  });
+
+  
+</script>   
+</body>
+</html>
